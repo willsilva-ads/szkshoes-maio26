@@ -34,6 +34,7 @@
             color: var(--text-main);
             overflow-x: hidden;
             line-height: 1.6;
+            font-size: 1.05rem;
         }
 
         /* App Layout Grid */
@@ -48,8 +49,10 @@
             background-color: #050813;
             border-right: 1px solid var(--border-card);
             padding: 2.5rem 1.25rem;
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 280px;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -60,33 +63,22 @@
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 2.5rem;
+            justify-content: center;
+            margin-bottom: 3.5rem;
         }
 
         .logo-img {
-            height: 32px;
+            height: 52px;
             width: auto;
             object-fit: contain;
-        }
-
-        .logo-text {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: 0.5px;
-            background: linear-gradient(135deg, #ffffff 0%, #b39ddb 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            outline: none;
-            padding: 0.25rem;
+            filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.2));
         }
 
         .nav-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.5rem;
         }
 
         .nav-item {
@@ -95,12 +87,7 @@
             width: 100%;
             border-radius: 10px;
             transition: all 0.3s ease;
-            cursor: grab;
             border: 1px solid transparent;
-        }
-        
-        .nav-item:active {
-            cursor: grabbing;
         }
 
         .nav-item a {
@@ -109,9 +96,9 @@
             gap: 0.75rem;
             color: var(--text-muted);
             text-decoration: none;
-            padding: 0.75rem 0.85rem;
+            padding: 0.85rem 1rem;
             width: 100%;
-            font-size: 0.925rem;
+            font-size: 0.975rem;
             font-weight: 500;
             outline: none;
         }
@@ -119,19 +106,14 @@
         .nav-item.active a, .nav-item a:hover {
             color: #fff;
             background: rgba(124, 58, 237, 0.08);
-            border-left: 3px solid var(--accent);
-            padding-left: calc(0.85rem - 3px);
-        }
-
-        .nav-item.drag-over {
-            border: 1px dashed var(--accent);
-            background: rgba(124, 58, 237, 0.04);
+            border-left: 4px solid var(--accent);
+            padding-left: calc(1rem - 4px);
         }
 
         .footer-branding {
             border-top: 1px solid var(--border-card);
             padding-top: 1.5rem;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
         }
 
@@ -149,9 +131,9 @@
             background: rgba(124, 58, 237, 0.1);
             border: 1px solid rgba(124, 58, 237, 0.2);
             color: #b39ddb;
-            padding: 0.6rem 1rem;
+            padding: 0.7rem 1rem;
             border-radius: 8px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
             margin-bottom: 1.5rem;
@@ -166,9 +148,11 @@
 
         /* Main Content Styling */
         .main-content {
-            padding: 3rem;
+            padding: 3.5rem;
+            margin-left: 280px;
             background-color: var(--bg-main);
             background-image: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.05) 0%, transparent 60%);
+            min-width: 0;
         }
 
         /* Cover Section styling */
@@ -190,14 +174,14 @@
 
         .cover-left h1 {
             font-family: 'Outfit', sans-serif;
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 800;
             line-height: 1.1;
             letter-spacing: -1px;
             background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .cover-badge {
@@ -207,9 +191,9 @@
             background: rgba(124, 58, 237, 0.1);
             border: 1px solid rgba(124, 58, 237, 0.2);
             color: #b39ddb;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 99px;
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -262,20 +246,18 @@
 
         .dash-header h2 {
             font-family: 'Outfit', sans-serif;
-            font-size: 2.25rem;
+            font-size: 2.6rem;
             font-weight: 700;
             letter-spacing: -0.5px;
             background: linear-gradient(135deg, #ffffff 0%, #b39ddb 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            outline: none;
         }
 
         .dash-header p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-top: 0.25rem;
-            outline: none;
+            font-size: 1.05rem;
+            margin-top: 0.4rem;
         }
 
         /* Section Layouts */
@@ -298,7 +280,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border-card);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 2.2rem;
             margin-bottom: 2rem;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
@@ -319,13 +301,12 @@
 
         .card-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 600;
             color: #fff;
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            outline: none;
         }
 
         .card-title-icon {
@@ -338,7 +319,7 @@
         /* KPI Grids */
         .kpi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.5rem;
             margin-bottom: 2.5rem;
         }
@@ -347,7 +328,7 @@
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-card);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.7rem;
             text-align: left;
             position: relative;
             overflow: hidden;
@@ -371,59 +352,75 @@
         }
 
         .kpi-label {
-            font-size: 0.725rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             font-weight: 600;
-            outline: none;
         }
 
         .kpi-value {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.75rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: #fff;
             line-height: 1.2;
-            outline: none;
         }
 
         .kpi-subtext {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             margin-top: 0.5rem;
             display: flex;
             align-items: center;
             gap: 0.25rem;
-            outline: none;
         }
 
-        /* Tables */
+        /* Tables & Scrolling */
+        .table-warning {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px dashed rgba(124, 58, 237, 0.3);
+            color: #b39ddb;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            width: 100%;
+        }
+
         .table-container {
             width: 100%;
             overflow-x: auto;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-card);
+            -webkit-overflow-scrolling: touch;
         }
 
         .premium-table {
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .premium-table th {
             background: var(--table-header);
-            padding: 1rem;
+            padding: 1.2rem 1.1rem;
             font-weight: 600;
             color: #fff;
             border-bottom: 1px solid var(--border-card);
             font-family: 'Outfit', sans-serif;
+            white-space: nowrap;
         }
 
         .premium-table td {
-            padding: 1rem;
+            padding: 1.2rem 1.1rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.03);
             color: var(--text-main);
             white-space: nowrap;
@@ -456,28 +453,26 @@
             background: rgba(255, 255, 255, 0.01);
             border: 1px solid var(--border-card);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.8rem;
         }
 
         .strategy-block h4 {
             font-family: 'Outfit', sans-serif;
             color: #b39ddb;
             margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            outline: none;
         }
 
         .strategy-block p {
-            outline: none;
             color: var(--text-muted);
-            font-size: 0.925rem;
+            font-size: 1.05rem;
         }
 
         .note-text {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            margin-top: 1rem;
+            margin-top: 1.2rem;
             font-style: italic;
         }
 
@@ -495,7 +490,7 @@
         .competitors-img {
             max-width: 100%;
             height: auto;
-            max-height: 500px;
+            max-height: 520px;
             object-fit: contain;
             display: block;
         }
@@ -513,13 +508,12 @@
 
         .thank-you-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 2rem;
-            outline: none;
+            margin-bottom: 2.5rem;
         }
 
         .final-branding-card {
@@ -550,10 +544,9 @@
         .footer-logo-mike {
             font-family: 'Outfit', sans-serif;
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #fff;
             letter-spacing: 2px;
-            outline: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -566,41 +559,210 @@
             background: rgba(24, 119, 242, 0.1);
             border: 1px solid rgba(24, 119, 242, 0.3);
             color: #1877F2;
-            padding: 0.75rem 1.5rem;
+            padding: 0.85rem 1.7rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             margin-top: 1rem;
+            font-size: 1rem;
         }
 
         .btn-link:hover {
             background: rgba(24, 119, 242, 0.2);
             box-shadow: 0 0 15px rgba(24, 119, 242, 0.2);
         }
+
+        /* Responsive styling for Mobile (iOS & Android) */
+        @media (max-width: 768px) {
+            .app-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+                min-height: 70px;
+                padding: 0.6rem 1rem;
+                border-right: none;
+                border-bottom: 1px solid var(--border-card);
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #050813;
+                z-index: 200;
+            }
+
+            .logo-area {
+                margin-bottom: 0 !important;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            nav {
+                width: auto;
+                max-width: 70%;
+            }
+
+            .nav-list {
+                flex-direction: row;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding: 0.3rem 0;
+                gap: 0.6rem;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .nav-list::-webkit-scrollbar {
+                display: none; /* Hide scrollbar for cleaner look */
+            }
+
+            .nav-item {
+                display: inline-block;
+                width: auto;
+            }
+
+            .nav-item a {
+                padding: 0.6rem 0.85rem;
+                font-size: 0.875rem;
+            }
+
+            .nav-item.active a, .nav-item a:hover {
+                border-left: none;
+                border-bottom: 3px solid var(--accent);
+                padding-left: 0.85rem;
+                padding-bottom: calc(0.6rem - 3px);
+            }
+
+            .fullscreen-btn {
+                display: none;
+            }
+
+            .footer-branding {
+                display: none;
+            }
+
+            .main-content {
+                padding: 6.5rem 1.2rem 2.5rem 1.2rem;
+                margin-left: 0;
+                background-image: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.08) 0%, transparent 50%);
+            }
+
+            .cover-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                text-align: center;
+            }
+
+            .cover-left h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cover-left p {
+                font-size: 1.5rem !important;
+            }
+
+            .cover-left p[style*="font-size: 1.15rem"] {
+                font-size: 1.05rem !important;
+                margin-bottom: 2.5rem !important;
+            }
+
+            .cover-art {
+                width: 220px;
+                height: 220px;
+                margin: 0 auto;
+            }
+
+            .cover-art img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .dash-header h2 {
+                font-size: 2rem;
+            }
+
+            .dash-header p {
+                font-size: 0.95rem;
+            }
+
+            .glass-card {
+                padding: 1.25rem;
+                border-radius: 12px;
+            }
+
+            .kpi-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 cards per line */
+                gap: 0.8rem;
+                margin-bottom: 1.8rem;
+            }
+
+            .kpi-card {
+                padding: 1.1rem;
+            }
+
+            .kpi-value {
+                font-size: 1.5rem;
+            }
+
+            .kpi-label {
+                font-size: 0.65rem;
+                margin-bottom: 0.35rem;
+            }
+
+            .kpi-subtext {
+                font-size: 0.75rem;
+            }
+
+            .strategy-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .strategy-block {
+                padding: 1.25rem;
+            }
+
+            .closing-footer-layout {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center !important;
+                gap: 1rem;
+            }
+
+            .thank-you-title {
+                font-size: 2.8rem;
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="app-container">
-    <!-- Sidebar Navigation -->
+    <!-- Sidebar Navigation (Fixed Top on Mobile, Fixed Left on Desktop) -->
     <aside class="sidebar">
         <div>
             <div class="logo-area">
                 <img src="logo-howli.png" class="logo-img" alt="Howli Logo">
-                <div class="logo-text" contenteditable="true">HOWLI</div>
             </div>
             
             <nav>
                 <ul class="nav-list" id="sidebarNavList">
-                    <li class="nav-item active" data-target="cover" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#cover"><span contenteditable="true">Capa do Relatório</span></a></li>
-                    <li class="nav-item" data-target="objetivos" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#objetivos"><span contenteditable="true">Objetivo e Estratégia</span></a></li>
-                    <li class="nav-item" data-target="publicos" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#publicos"><span contenteditable="true">Públicos Alvo</span></a></li>
-                    <li class="nav-item" data-target="meta-trafego" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#meta-trafego"><span contenteditable="true">Tráfego Instagram</span></a></li>
-                    <li class="nav-item" data-target="meta-leads" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#meta-leads"><span contenteditable="true">WhatsApp Leads</span></a></li>
-                    <li class="nav-item" data-target="investimentos" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#investimentos"><span contenteditable="true">Investimento Total</span></a></li>
-                    <li class="nav-item" data-target="mais-informacoes" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#mais-informacoes"><span contenteditable="true">Mais Informações</span></a></li>
-                    <li class="nav-item" data-target="finalizacao" draggable="true" ondragstart="handleDragStart(event)" ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragend="handleDragEnd(event)"><a href="#finalizacao"><span contenteditable="true">Agradecimento</span></a></li>
+                    <li class="nav-item active" data-target="cover"><a href="#cover"><span>Capa do Relatório</span></a></li>
+                    <li class="nav-item" data-target="objetivos"><a href="#objetivos"><span>Objetivo e Estratégia</span></a></li>
+                    <li class="nav-item" data-target="publicos"><a href="#publicos"><span>Públicos Alvo</span></a></li>
+                    <li class="nav-item" data-target="meta-trafego"><a href="#meta-trafego"><span>Tráfego Instagram</span></a></li>
+                    <li class="nav-item" data-target="meta-leads"><a href="#meta-leads"><span>WhatsApp Leads</span></a></li>
+                    <li class="nav-item" data-target="investimentos"><a href="#investimentos"><span>Investimento Total</span></a></li>
+                    <li class="nav-item" data-target="mais-informacoes"><a href="#mais-informacoes"><span>Mais Informações</span></a></li>
+                    <li class="nav-item" data-target="finalizacao"><a href="#finalizacao"><span>Agradecimento</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -612,8 +774,8 @@
             </button>
             
             <div class="footer-branding">
-                <strong contenteditable="true">Maio 2026</strong>
-                <span contenteditable="true">Performance Dashboard</span>
+                <strong>Maio 2026</strong>
+                <span>Performance Dashboard</span>
             </div>
         </div>
     </aside>
@@ -623,23 +785,23 @@
         <!-- COVER SECTION -->
         <section id="cover" class="section-block active">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
-                <div class="cover-badge" contenteditable="true">🏆 Dashboard de Performance</div>
+                <div class="cover-badge">🏆 Dashboard de Performance</div>
             </div>
             
             <div class="cover-content" style="margin-top: 4rem;">
                 <div class="cover-left">
-                    <h1 contenteditable="true">Relatório de Tráfego Pago</h1>
-                    <p style="font-size: 2.2rem; color: #fff; margin-bottom: 0.75rem; font-family: 'Outfit'; font-weight: 700;" contenteditable="true">SZK SHOES</p>
-                    <p style="font-size: 1.15rem; color: var(--text-muted); font-weight: 300; margin-bottom: 4rem;" contenteditable="true">Análise estratégica de tráfego pago, visitas ao perfil e captação de leads via WhatsApp no período de Maio de 2026.</p>
+                    <h1>Relatório de Tráfego Pago</h1>
+                    <p style="font-size: 2.2rem; color: #fff; margin-bottom: 0.75rem; font-family: 'Outfit'; font-weight: 700;">SZK SHOES</p>
+                    <p style="font-size: 1.15rem; color: var(--text-muted); font-weight: 300; margin-bottom: 4rem;">Análise estratégica de tráfego pago, visitas ao perfil e captação de leads via WhatsApp no período de Maio de 2026.</p>
                     
                     <!-- Cover Signature Block -->
                     <div class="closing-footer-layout" style="justify-content: flex-start; margin-top: 2rem;">
                         <img src="logo-howli.png" style="height: 35px; object-fit: contain; filter: drop-shadow(0 0 5px rgba(124, 58, 237, 0.3));" alt="Howli Logo">
-                        <div class="footer-logo-mike" style="margin-left: -0.5rem;" contenteditable="true">HOWLI</div>
+                        <div class="footer-logo-mike" style="margin-left: -0.5rem;">HOWLI</div>
                         <div class="closing-divider"></div>
                         <div style="text-align: left; font-size: 0.8rem; color: var(--text-muted);">
-                            <strong style="color: #fff; display: block; margin-bottom: 0.25rem;" contenteditable="true">SZK SHOES</strong>
-                            <span contenteditable="true">Gestão de Mídia & Analytics | Maio 2026</span>
+                            <strong style="color: #fff; display: block; margin-bottom: 0.25rem;">SZK SHOES</strong>
+                            <span>Gestão de Mídia & Analytics | Maio 2026</span>
                         </div>
                     </div>
                 </div>
@@ -655,22 +817,22 @@
         <section id="objetivos" class="section-block">
             <div class="dash-header">
                 <div>
-                    <h2 contenteditable="true">Objetivo e Estratégia</h2>
-                    <p contenteditable="true">Direcionamento das campanhas de tráfego pago em Maio de 2026</p>
+                    <h2>Objetivo e Estratégia</h2>
+                    <p>Direcionamento das campanhas de tráfego pago em Maio de 2026</p>
                 </div>
             </div>
 
             <div class="glass-card">
                 <div class="strategy-container" style="grid-template-columns: 1fr; gap: 2.5rem;">
                     <div class="strategy-block" style="border-left: 4px solid var(--accent); background: rgba(124, 58, 237, 0.02);">
-                        <h4 contenteditable="true">Objetivo</h4>
-                        <p style="font-size: 1.1rem; line-height: 1.7;" contenteditable="true">
+                        <h4>Objetivo</h4>
+                        <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-main);">
                             Gerar Visitas ao Perfil da SZK SHOES no Instagram e captação de leads qualificados para conversão direta.
                         </p>
                     </div>
                     <div class="strategy-block" style="border-left: 4px solid var(--meta-color); background: rgba(24, 119, 242, 0.02);">
-                        <h4 contenteditable="true">Estratégia</h4>
-                        <p style="font-size: 1.1rem; line-height: 1.7;" contenteditable="true">
+                        <h4>Estratégia</h4>
+                        <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-main);">
                             Utilizamos campanhas da plataforma Meta Ads com objetivo de gerar tráfego direcionado para o Instagram, trazendo novas visitas altamente qualificadas ao perfil, juntamente com campanhas com objetivo de Engajamento voltadas para o início de conversas no WhatsApp.
                         </p>
                     </div>
@@ -682,14 +844,14 @@
         <section id="publicos" class="section-block">
             <div class="dash-header">
                 <div>
-                    <h2 contenteditable="true">Públicos Alvo</h2>
-                    <p contenteditable="true">Configuração e direcionamento dos públicos-alvo das campanhas</p>
+                    <h2>Públicos Alvo</h2>
+                    <p>Configuração e direcionamento dos públicos-alvo das campanhas</p>
                 </div>
             </div>
 
             <div class="glass-card">
                 <div class="card-header">
-                    <div class="card-title" contenteditable="true">
+                    <div class="card-title">
                         <div class="card-title-icon"></div>
                         Distribuição e Configuração de Público
                     </div>
@@ -697,7 +859,7 @@
                 <div class="competitors-img-wrapper" style="padding: 1.5rem; background: rgba(0,0,0,0.2);">
                     <img src="publicos.png" class="competitors-img" alt="Direcionamento de Público Alvo">
                 </div>
-                <div class="note-text" style="margin-top: 1.5rem; font-size: 0.9rem; line-height: 1.6;" contenteditable="true">
+                <div class="note-text" style="margin-top: 1.5rem; font-size: 0.95rem; line-height: 1.6;">
                     * Gráfico e parâmetros de público mapeados diretamente das campanhas ativas do gerenciador de anúncios no mês de Maio de 2026.
                 </div>
             </div>
@@ -707,85 +869,88 @@
         <section id="meta-trafego" class="section-block">
             <div class="dash-header">
                 <div>
-                    <h2 contenteditable="true">Meta Ads - Tráfego Instagram</h2>
-                    <p contenteditable="true">Visitas ao perfil do Instagram - Campanha de Conversão & Engajamento Topo de Funil</p>
+                    <h2>Meta Ads - Tráfego Instagram</h2>
+                    <p>Visitas ao perfil do Instagram - Campanha de Conversão & Engajamento Topo de Funil</p>
                 </div>
             </div>
 
             <div class="kpi-grid">
                 <div class="kpi-card" style="--accent: var(--meta-color)">
-                    <div class="kpi-label" contenteditable="true">Impressões</div>
-                    <div class="kpi-value" contenteditable="true">51.183</div>
-                    <div class="kpi-subtext" contenteditable="true">Exibições totais dos anúncios</div>
+                    <div class="kpi-label">Impressões</div>
+                    <div class="kpi-value">51.183</div>
+                    <div class="kpi-subtext">Exibições totais dos anúncios</div>
                 </div>
                 <div class="kpi-card" style="--accent: var(--meta-color)">
-                    <div class="kpi-label" contenteditable="true">Pessoas Alcançadas</div>
-                    <div class="kpi-value" contenteditable="true">25.890</div>
-                    <div class="kpi-subtext" contenteditable="true">Usuários únicos alcançados</div>
+                    <div class="kpi-label">Pessoas Alcançadas</div>
+                    <div class="kpi-value">25.890</div>
+                    <div class="kpi-subtext">Usuários únicos alcançados</div>
                 </div>
                 <div class="kpi-card" style="--accent: var(--meta-color)">
-                    <div class="kpi-label" contenteditable="true">Visitas ao Perfil</div>
-                    <div class="kpi-value" contenteditable="true">1.139</div>
-                    <div class="kpi-subtext" contenteditable="true">Cliques para visitar perfil</div>
+                    <div class="kpi-label">Visitas ao Perfil</div>
+                    <div class="kpi-value">1.139</div>
+                    <div class="kpi-subtext">Cliques para visitar perfil</div>
                 </div>
                 <div class="kpi-card" style="--accent: var(--meta-color)">
-                    <div class="kpi-label" contenteditable="true">Custo por Visita</div>
-                    <div class="kpi-value" contenteditable="true">R$ 0,28</div>
-                    <div class="kpi-subtext" contenteditable="true">Custo médio por visita ao perfil</div>
+                    <div class="kpi-label">Custo por Visita</div>
+                    <div class="kpi-value">R$ 0,28</div>
+                    <div class="kpi-subtext">Custo médio por visita ao perfil</div>
                 </div>
                 <div class="kpi-card" style="--accent: var(--meta-color)">
-                    <div class="kpi-label" contenteditable="true">Seguidores Ganhos</div>
-                    <div class="kpi-value" contenteditable="true">69</div>
-                    <div class="kpi-subtext" contenteditable="true">Novos seguidores adquiridos</div>
+                    <div class="kpi-label">Seguidores Ganhos</div>
+                    <div class="kpi-value">69</div>
+                    <div class="kpi-subtext">Novos seguidores adquiridos</div>
                 </div>
                 <div class="kpi-card" style="--accent: var(--meta-color)">
-                    <div class="kpi-label" contenteditable="true">Custo por Seguidor</div>
-                    <div class="kpi-value" contenteditable="true">R$ 4,64</div>
-                    <div class="kpi-subtext" contenteditable="true">Investimento por seguidor ganho</div>
+                    <div class="kpi-label">Custo por Seguidor</div>
+                    <div class="kpi-value">R$ 4,64</div>
+                    <div class="kpi-subtext">Investimento por seguidor ganho</div>
                 </div>
                 <div class="kpi-card" style="--accent: var(--meta-color)">
-                    <div class="kpi-label" contenteditable="true">Investimento</div>
-                    <div class="kpi-value" contenteditable="true">R$ 320,11</div>
-                    <div class="kpi-subtext" contenteditable="true">Orçamento total investido</div>
+                    <div class="kpi-label">Investimento</div>
+                    <div class="kpi-value">R$ 320,11</div>
+                    <div class="kpi-subtext">Orçamento total investido</div>
                 </div>
             </div>
 
             <div class="glass-card">
                 <div class="card-header">
-                    <div class="card-title" contenteditable="true">
+                    <div class="card-title">
                         <div class="card-title-icon" style="background: var(--meta-color)"></div>
                         Mapeamento de Funil de Conversão (Tráfego)
                     </div>
+                </div>
+                <div class="table-warning">
+                    <span>↔️ Deslize a tabela para o lado para ver mais</span>
                 </div>
                 <div class="table-container">
                     <table class="premium-table">
                         <thead>
                             <tr>
-                                <th contenteditable="true">Métrica Operacional</th>
-                                <th contenteditable="true">Resultado Absoluto</th>
-                                <th contenteditable="true">Conversão / Desempenho</th>
+                                <th>Métrica Operacional</th>
+                                <th>Resultado Absoluto</th>
+                                <th>Conversão / Desempenho</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td contenteditable="true">Alcance Único (Pessoas Alcançadas)</td>
-                                <td contenteditable="true">25.890</td>
-                                <td contenteditable="true">50,58% de Frequência de Impressão (1.97x)</td>
+                                <td>Alcance Único (Pessoas Alcançadas)</td>
+                                <td>25.890</td>
+                                <td>50,58% de Frequência de Impressão (1.97x)</td>
                             </tr>
                             <tr>
-                                <td contenteditable="true">Cliques / Visitas ao Perfil</td>
-                                <td contenteditable="true">1.139</td>
-                                <td contenteditable="true">4,40% CTR de Visita (em relação ao Alcance)</td>
+                                <td>Cliques / Visitas ao Perfil</td>
+                                <td>1.139</td>
+                                <td>4,40% CTR de Visita (em relação ao Alcance)</td>
                             </tr>
                             <tr>
-                                <td contenteditable="true">Novos Seguidores</td>
-                                <td contenteditable="true">69</td>
-                                <td contenteditable="true">6,06% de Conversão (Visitas -> Seguidores)</td>
+                                <td>Novos Seguidores</td>
+                                <td>69</td>
+                                <td>6,06% de Conversão (Visitas -> Seguidores)</td>
                             </tr>
                             <tr class="total-row">
-                                <td contenteditable="true">Investimento Total da Campanha</td>
-                                <td contenteditable="true">R$ 320,11</td>
-                                <td contenteditable="true">Custo de Aquisição Médio Otimizado</td>
+                                <td>Investimento Total da Campanha</td>
+                                <td>R$ 320,11</td>
+                                <td>Custo de Aquisição Médio Otimizado</td>
                             </tr>
                         </tbody>
                     </table>
@@ -797,75 +962,78 @@
         <section id="meta-leads" class="section-block">
             <div class="dash-header">
                 <div>
-                    <h2 contenteditable="true">Meta Ads - Engajamento WhatsApp</h2>
-                    <p contenteditable="true">Captação de leads qualificados para conversão direta no comercial</p>
+                    <h2>Meta Ads - Engajamento WhatsApp</h2>
+                    <p>Captação de leads qualificados para conversão direta no comercial</p>
                 </div>
             </div>
 
             <div class="kpi-grid">
                 <div class="kpi-card" style="--accent: var(--whatsapp-color)">
-                    <div class="kpi-label" contenteditable="true">Impressões</div>
-                    <div class="kpi-value" contenteditable="true">26.556</div>
-                    <div class="kpi-subtext" contenteditable="true">Exibições totais dos anúncios</div>
+                    <div class="kpi-label">Impressões</div>
+                    <div class="kpi-value">26.556</div>
+                    <div class="kpi-subtext">Exibições totais dos anúncios</div>
                 </div>
                 <div class="kpi-card" style="--accent: var(--whatsapp-color)">
-                    <div class="kpi-label" contenteditable="true">Pessoas Alcançadas</div>
-                    <div class="kpi-value" contenteditable="true">12.658</div>
-                    <div class="kpi-subtext" contenteditable="true">Usuários únicos impactados</div>
+                    <div class="kpi-label">Pessoas Alcançadas</div>
+                    <div class="kpi-value">12.658</div>
+                    <div class="kpi-subtext">Usuários únicos impactados</div>
                 </div>
                 <div class="kpi-card" style="--accent: var(--whatsapp-color)">
-                    <div class="kpi-label" contenteditable="true">Contatos Gerados (Leads)</div>
-                    <div class="kpi-value" contenteditable="true">116</div>
-                    <div class="kpi-subtext" contenteditable="true">Conversas iniciadas no WhatsApp</div>
+                    <div class="kpi-label">Contatos Gerados (Leads)</div>
+                    <div class="kpi-value">116</div>
+                    <div class="kpi-subtext">Conversas iniciadas no WhatsApp</div>
                 </div>
                 <div class="kpi-card" style="--accent: var(--whatsapp-color)">
-                    <div class="kpi-label" contenteditable="true">Custo por Lead (Mensagem)</div>
-                    <div class="kpi-value" contenteditable="true">R$ 2,92</div>
-                    <div class="kpi-subtext" contenteditable="true">Custo por nova mensagem gerada</div>
+                    <div class="kpi-label">Custo por Lead (Mensagem)</div>
+                    <div class="kpi-value">R$ 2,92</div>
+                    <div class="kpi-subtext">Custo por nova mensagem gerada</div>
                 </div>
                 <div class="kpi-card" style="--accent: var(--whatsapp-color)">
-                    <div class="kpi-label" contenteditable="true">Seguidores Ganhos (Indireto)</div>
-                    <div class="kpi-value" contenteditable="true">44</div>
-                    <div class="kpi-subtext" contenteditable="true">Seguidores gerados de forma assistida</div>
+                    <div class="kpi-label">Seguidores Ganhos (Indireto)</div>
+                    <div class="kpi-value">44</div>
+                    <div class="kpi-subtext">Seguidores gerados de forma assistida</div>
                 </div>
                 <div class="kpi-card" style="--accent: var(--whatsapp-color)">
-                    <div class="kpi-label" contenteditable="true">Investimento</div>
-                    <div class="kpi-value" contenteditable="true">R$ 339,22</div>
-                    <div class="kpi-subtext" contenteditable="true">Orçamento total investido</div>
+                    <div class="kpi-label">Investimento</div>
+                    <div class="kpi-value">R$ 339,22</div>
+                    <div class="kpi-subtext">Orçamento total investido</div>
                 </div>
             </div>
 
             <div class="glass-card">
                 <div class="card-header">
-                    <div class="card-title" contenteditable="true">
+                    <div class="card-title">
                         <div class="card-title-icon" style="background: var(--whatsapp-color)"></div>
                         Mapeamento de Funil de Leads (WhatsApp)
                     </div>
+                </div>
+                <div class="table-warning">
+                    <span>↔️ Deslize a tabela para o lado para ver mais</span>
                 </div>
                 <div class="table-container">
                     <table class="premium-table">
                         <thead>
                             <tr>
-                                <th contenteditable="true">Métrica Operacional</th>
-                                <th contenteditable="true">Resultado Absoluto</th>
-                                <th contenteditable="true">Taxa de Conversão</th>
+                                <th>Métrica Operacional</th>
+                                <th>Resultado Absoluto</th>
+                                <th>Taxa de Conversão</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td contenteditable="true">Alcance Único</td>
-                                <td contenteditable="true">12.658</td>
-                                <td contenteditable="true">Frequência média de 2.09x por usuário</td>
+                                <td>Alcance Único</td>
+                                <td>12.658</td>
+                                <td>Frequência média de 2.09x por usuário</td>
                             </tr>
                             <tr>
-                                <td contenteditable="true">Mensagens Iniciadas (WhatsApp Leads)</td>
-                                <td contenteditable="true">116</td>
-                                <td contenteditable="true">0,91% de conversão (Alcance -> Mensagem)</td>
+                                <td>Mensagens Iniciadas (WhatsApp Leads)</td>
+                                <td>116</td>
+                                <td>0,91% de conversão (Alcance -> Mensagem)</td>
                             </tr>
                             <tr class="total-row">
-                                <td contenteditable="true">Investimento Total na Campanha</td>
-                                <td contenteditable="true">R$ 339,22</td>
-                                <td contenteditable="true">R$ 2,92 por contato comercial iniciado</td>
+                                <td>Investimento Total na Campanha</td>
+                                <td>R$ 339,22</td>
+                                <td>R$ 2,92 por contato comercial iniciado</td>
                             </tr>
                         </tbody>
                     </table>
@@ -877,14 +1045,14 @@
         <section id="investimentos" class="section-block">
             <div class="dash-header">
                 <div>
-                    <h2 contenteditable="true">Investimento Total</h2>
-                    <p contenteditable="true">Resumo financeiro e operacional consolidado de Maio 2026</p>
+                    <h2>Investimento Total</h2>
+                    <p>Resumo financeiro e operacional consolidado de Maio 2026</p>
                 </div>
             </div>
 
             <div class="glass-card">
                 <div class="card-header">
-                    <div class="card-title" contenteditable="true">
+                    <div class="card-title">
                         <div class="card-title-icon" style="background: var(--accent)"></div>
                         Distribuição do Orçamento Consolidado
                     </div>
@@ -892,58 +1060,61 @@
                 
                 <div class="kpi-grid">
                     <div class="kpi-card" style="--accent: var(--meta-color)">
-                        <div class="kpi-label" contenteditable="true">Meta Tráfego (Perfil)</div>
-                        <div class="kpi-value" contenteditable="true">R$ 320,11</div>
-                        <div class="kpi-subtext" contenteditable="true">Foco em crescimento de base</div>
+                        <div class="kpi-label">Meta Tráfego (Perfil)</div>
+                        <div class="kpi-value">R$ 320,11</div>
+                        <div class="kpi-subtext">Foco em crescimento de base</div>
                     </div>
                     <div class="kpi-card" style="--accent: var(--whatsapp-color)">
-                        <div class="kpi-label" contenteditable="true">Meta Leads (WhatsApp)</div>
-                        <div class="kpi-value" contenteditable="true">R$ 339,22</div>
-                        <div class="kpi-subtext" contenteditable="true">Foco em tração comercial imediata</div>
+                        <div class="kpi-label">Meta Leads (WhatsApp)</div>
+                        <div class="kpi-value">R$ 339,22</div>
+                        <div class="kpi-subtext">Foco em tração comercial imediata</div>
                     </div>
                     <div class="kpi-card" style="--accent: var(--accent)">
-                        <div class="kpi-label" contenteditable="true">Investimento Total</div>
-                        <div class="kpi-value" contenteditable="true">R$ 659,33</div>
-                        <div class="kpi-subtext" contenteditable="true">Consolidado do período (Maio/26)</div>
+                        <div class="kpi-label">Investimento Total</div>
+                        <div class="kpi-value">R$ 659,33</div>
+                        <div class="kpi-subtext">Consolidado do período (Maio/26)</div>
                     </div>
                 </div>
 
-                <div class="table-container" style="margin-top: 2rem;">
+                <div class="table-warning">
+                    <span>↔️ Deslize a tabela para o lado para ver mais</span>
+                </div>
+                <div class="table-container" style="margin-top: 1rem;">
                     <table class="premium-table">
                         <thead>
                             <tr>
-                                <th contenteditable="true">Campanha / Objetivo</th>
-                                <th contenteditable="true">Impressões</th>
-                                <th contenteditable="true">Alcance Único</th>
-                                <th contenteditable="true">Principais Conversões</th>
-                                <th contenteditable="true">Seguidores</th>
-                                <th contenteditable="true">Investimento</th>
+                                <th>Campanha / Objetivo</th>
+                                <th>Impressões</th>
+                                <th>Alcance Único</th>
+                                <th>Principais Conversões</th>
+                                <th>Seguidores</th>
+                                <th>Investimento</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td contenteditable="true">Tráfego Instagram (Visita Perfil)</td>
-                                <td contenteditable="true">51.183</td>
-                                <td contenteditable="true">25.890</td>
-                                <td contenteditable="true">1.139 Visitas</td>
-                                <td contenteditable="true">69</td>
-                                <td contenteditable="true">R$ 320,11</td>
+                                <td>Tráfego Instagram (Visita Perfil)</td>
+                                <td>51.183</td>
+                                <td>25.890</td>
+                                <td>1.139 Visitas</td>
+                                <td>69</td>
+                                <td>R$ 320,11</td>
                             </tr>
                             <tr>
-                                <td contenteditable="true">Engajamento WhatsApp (Leads)</td>
-                                <td contenteditable="true">26.556</td>
-                                <td contenteditable="true">12.658</td>
-                                <td contenteditable="true">116 Leads</td>
-                                <td contenteditable="true">44</td>
-                                <td contenteditable="true">R$ 339,22</td>
+                                <td>Engajamento WhatsApp (Leads)</td>
+                                <td>26.556</td>
+                                <td>12.658</td>
+                                <td>116 Leads</td>
+                                <td>44</td>
+                                <td>R$ 339,22</td>
                             </tr>
                             <tr class="total-row">
-                                <td contenteditable="true">Consolidado Meta Ads</td>
-                                <td contenteditable="true">77.739</td>
-                                <td contenteditable="true">38.548</td>
-                                <td contenteditable="true">1.255 Ações de Conversão</td>
-                                <td contenteditable="true">113</td>
-                                <td contenteditable="true">R$ 659,33</td>
+                                <td>Consolidado Meta Ads</td>
+                                <td>77.739</td>
+                                <td>38.548</td>
+                                <td>1.255 Ações de Conversão</td>
+                                <td>113</td>
+                                <td>R$ 659,33</td>
                             </tr>
                         </tbody>
                     </table>
@@ -955,37 +1126,37 @@
         <section id="mais-informacoes" class="section-block">
             <div class="dash-header">
                 <div>
-                    <h2 contenteditable="true">Mais Informações e Análise Estratégica</h2>
-                    <p contenteditable="true">Insights operacionais obtidos das campanhas de tráfego de Maio 2026</p>
+                    <h2>Mais Informações e Análise Estratégica</h2>
+                    <p>Insights operacionais obtidos das campanhas de tráfego de Maio 2026</p>
                 </div>
             </div>
 
             <div class="glass-card">
                 <div style="margin-bottom: 2.5rem;">
-                    <h3 style="font-family: 'Outfit'; font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--accent); display: flex; align-items: center; gap: 0.5rem;" contenteditable="true">
+                    <h3 style="font-family: 'Outfit'; font-size: 1.45rem; margin-bottom: 0.85rem; color: var(--accent); display: flex; align-items: center; gap: 0.5rem;">
                         <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--accent);"></span>
                         Desempenho da Campanha de Tráfego (Visitas e Crescimento)
                     </h3>
-                    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem;" contenteditable="true">
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">
                         Através da campanha de tráfego com o objetivo principal de ganhar seguidores, conseguimos alcançar aproximadamente <strong>25 mil pessoas</strong> (25.890), das quais <strong>1.139 visitaram o perfil</strong> do Instagram e <strong>69 começaram a seguir</strong> a página. Todo esse público impactado está localizado dentro do Público-Alvo estritamente definido e qualificado.
                     </p>
                 </div>
 
                 <div style="margin-bottom: 2.5rem; border-top: 1px solid var(--border-card); padding-top: 1.8rem;">
-                    <h3 style="font-family: 'Outfit'; font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--whatsapp-color); display: flex; align-items: center; gap: 0.5rem;" contenteditable="true">
+                    <h3 style="font-family: 'Outfit'; font-size: 1.45rem; margin-bottom: 0.85rem; color: var(--whatsapp-color); display: flex; align-items: center; gap: 0.5rem;">
                         <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--whatsapp-color);"></span>
                         Performance da Campanha de WhatsApp Leads (Atendimento Direto)
                     </h3>
-                    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7;" contenteditable="true">
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
                         Na campanha estruturada para captação de leads via WhatsApp, geramos um total de <strong>116 mensagens iniciadas</strong>, custando um valor médio excelente de apenas <strong>R$ 2,92 por mensagem</strong>. Conseguimos impactar cerca de <strong>12 mil pessoas</strong> (12.658) na plataforma Meta, realizando um investimento total de <strong>R$ 339,22</strong> para esta frente.
                     </p>
                 </div>
 
                 <div style="border-top: 1px solid var(--border-card); padding-top: 1.8rem; text-align: left;">
-                    <h3 style="font-family: 'Outfit'; font-size: 1.3rem; margin-bottom: 1rem; color: #fff; display: flex; align-items: center; gap: 0.5rem;" contenteditable="true">
+                    <h3 style="font-family: 'Outfit'; font-size: 1.45rem; margin-bottom: 1rem; color: #fff; display: flex; align-items: center; gap: 0.5rem;">
                         🔗 Transparência e Auditoria de Campanhas
                     </h3>
-                    <p style="color: var(--text-muted); font-size: 1.025rem; line-height: 1.6; margin-bottom: 1.5rem;" contenteditable="true">
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">
                         É possível verificar em tempo real e de forma transparente os anúncios que estão ativos na biblioteca de anúncios do Facebook através do link oficial abaixo:
                     </p>
                     <a href="https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BR&is_targeted_country=false&media_type=all&search_type=page&sort_data[direction]=desc&sort_data[mode]=total_impressions&view_all_page_id=1812227322440695" target="_blank" class="btn-link">
@@ -998,17 +1169,17 @@
         <!-- THANK YOU SECTION -->
         <section id="finalizacao" class="section-block">
             <div class="final-presentation-block">
-                <h2 class="thank-you-title" contenteditable="true">Muito obrigado pela parceria!</h2>
+                <h2 class="thank-you-title">Muito obrigado pela parceria!</h2>
                 
                 <div class="final-branding-card" style="background: transparent; border: none; padding: 0;">
                     <!-- Closing Signature Block -->
                     <div class="closing-footer-layout">
                         <img src="logo-howli.png" style="height: 35px; object-fit: contain; filter: drop-shadow(0 0 5px rgba(124, 58, 237, 0.3));" alt="Howli Logo">
-                        <div class="footer-logo-mike" style="margin-left: -0.5rem;" contenteditable="true">HOWLI</div>
+                        <div class="footer-logo-mike" style="margin-left: -0.5rem;">HOWLI</div>
                         <div class="closing-divider"></div>
                         <div style="text-align: left; font-size: 0.8rem; color: var(--text-muted);">
-                            <strong style="color: #fff; display: block; margin-bottom: 0.25rem;" contenteditable="true">SZK SHOES</strong>
-                            <span contenteditable="true">Gestão de Mídia & Analytics | Maio 2026</span>
+                            <strong style="color: #fff; display: block; margin-bottom: 0.25rem;">SZK SHOES</strong>
+                            <span>Gestão de Mídia & Analytics | Maio 2026</span>
                         </div>
                     </div>
                 </div>
@@ -1034,8 +1205,6 @@
     // Navigation routing logic
     document.querySelectorAll('.nav-item').forEach(item => {
         item.addEventListener('click', function(e) {
-            if (e.target.hasAttribute('contenteditable') || e.target.closest('[contenteditable="true"]')) return;
-            
             e.preventDefault();
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
             this.classList.add('active');
@@ -1047,70 +1216,16 @@
                     section.classList.add('active');
                 }
             });
+            
+            // For mobile fixed navigation header, adjust scroll offset
+            let offset = 0;
+            if (window.innerWidth <= 768) {
+                offset = 75; // Height of the mobile fixed nav header
+            }
+            const bodyRect = document.body.getBoundingClientRect().top;
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     });
-
-    // Drag and Drop ordering for navigation links
-    let dragSourceEl = null;
-
-    function handleDragStart(e) {
-        dragSourceEl = e.currentTarget;
-        e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData('text/html', e.currentTarget.innerHTML);
-        e.dataTransfer.setData('text/plain', e.currentTarget.getAttribute('data-target'));
-        e.currentTarget.style.opacity = '0.4';
-    }
-
-    function handleDragOver(e) {
-        if (e.preventDefault) {
-            e.preventDefault();
-        }
-        e.currentTarget.classList.add('drag-over');
-        e.dataTransfer.dropEffect = 'move';
-        return false;
-    }
-
-    function handleDragLeave(e) {
-        e.currentTarget.classList.remove('drag-over');
-    }
-
-    function handleDrop(e) {
-        if (e.stopPropagation) {
-            e.stopPropagation();
-        }
-        
-        if (dragSourceEl !== e.currentTarget) {
-            const sourceHTML = dragSourceEl.innerHTML;
-            const sourceTarget = dragSourceEl.getAttribute('data-target');
-            
-            dragSourceEl.innerHTML = e.currentTarget.innerHTML;
-            dragSourceEl.setAttribute('data-target', e.currentTarget.getAttribute('data-target'));
-            
-            e.currentTarget.innerHTML = sourceHTML;
-            e.currentTarget.setAttribute('data-target', sourceTarget);
-            
-            const wasActive = e.currentTarget.classList.contains('active');
-            const sourceActive = dragSourceEl.classList.contains('active');
-            
-            if (wasActive) {
-                e.currentTarget.classList.remove('active');
-                dragSourceEl.classList.add('active');
-            } else if (sourceActive) {
-                dragSourceEl.classList.remove('active');
-                e.currentTarget.classList.add('active');
-            }
-        }
-        e.currentTarget.classList.remove('drag-over');
-        return false;
-    }
-
-    function handleDragEnd(e) {
-        e.currentTarget.style.opacity = '1';
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.classList.remove('drag-over');
-        });
-    }
 </script>
 
 </body>
